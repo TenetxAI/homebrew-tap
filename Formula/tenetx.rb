@@ -13,6 +13,16 @@ class Tenetx < Formula
     end
   end
 
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://github.com/TenetxAI/homebrew-tap/releases/download/cli-v0.4.3/tenetx_linux_arm64.tar.gz"
+      sha256 "9db51b57703d6151085e6dd8a0a91ec7fe269fb4469e3a73f50696798c1e799d"
+    else
+      url "https://github.com/TenetxAI/homebrew-tap/releases/download/cli-v0.4.3/tenetx_linux_amd64.tar.gz"
+      sha256 "66d491974e177b64dd0db6198a906b9fdd2abb4a28b469e4dddcaf3cd78ef9b8"
+    end
+  end
+
   def install
     bin.install "tenetx"
   end
