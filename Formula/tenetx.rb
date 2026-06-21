@@ -1,25 +1,25 @@
 class Tenetx < Formula
   desc "Secure your AI coding agents — the TenetX CLI"
   homepage "https://tenetx.ai"
-  version "0.4.3"
+  version "0.4.4"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/TenetxAI/homebrew-tap/releases/download/cli-v0.4.3/tenetx_darwin_arm64.tar.gz"
-      sha256 "622d766af4596ee55282bb5f93b9547786c23fefa7a15485b6070efa98845885"
+      url "https://github.com/TenetxAI/homebrew-tap/releases/download/cli-v0.4.4/tenetx_darwin_arm64.tar.gz"
+      sha256 "7d279d46a788c56a4ce63704a74bb7468027798c3c7397526bc125b62ec4a108"
     else
-      url "https://github.com/TenetxAI/homebrew-tap/releases/download/cli-v0.4.3/tenetx_darwin_amd64.tar.gz"
-      sha256 "92415834ce705bf126ffd6ad17865217d5c915af496930b2a8c5b6b54f6fb651"
+      url "https://github.com/TenetxAI/homebrew-tap/releases/download/cli-v0.4.4/tenetx_darwin_amd64.tar.gz"
+      sha256 "3f707623ff37cb9fd02470a248d094eb732628d53a99f73d2030ba1a5abf771e"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/TenetxAI/homebrew-tap/releases/download/cli-v0.4.3/tenetx_linux_arm64.tar.gz"
-      sha256 "9db51b57703d6151085e6dd8a0a91ec7fe269fb4469e3a73f50696798c1e799d"
+      url "https://github.com/TenetxAI/homebrew-tap/releases/download/cli-v0.4.4/tenetx_linux_arm64.tar.gz"
+      sha256 "7ce124b3b00b2c3badd81ba39aa907412c8090665e2b78a5b2bf291aeecf3317"
     else
-      url "https://github.com/TenetxAI/homebrew-tap/releases/download/cli-v0.4.3/tenetx_linux_amd64.tar.gz"
-      sha256 "66d491974e177b64dd0db6198a906b9fdd2abb4a28b469e4dddcaf3cd78ef9b8"
+      url "https://github.com/TenetxAI/homebrew-tap/releases/download/cli-v0.4.4/tenetx_linux_amd64.tar.gz"
+      sha256 "244270521dd50999eeb2340827217e98bfb64947db6edf21f942bfba7c31f329"
     end
   end
 
