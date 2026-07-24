@@ -1,0 +1,39 @@
+name: Validate Homebrew formula
+
+on:
+  pull_request:
+    paths:
+      - "Formula/**"
+      - ".github/workflows/validate-formula.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "Formula/**"
+      - ".github/workflows/validate-formula.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate formula
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check Ruby syntax
+        run: ruby -c Formula/tenetx.rb
+
+      - name: Validate release URLs and checksums
+        shell: ruby {0}
+        run: |
+          formula = File.read("Formula/tenetx.rb")
+          urls = formula.scan(/url "([^"]+)"/).flatten
+          checksums = formula.scan(/sha256 "([0-9a-f]{64})"/).flatten
+
+          abort "Expected four release URLs" unless urls.length == 4
+          abort "Expected four SHA-256 checksums" unless checksums.length == 4
+          abort "Release URLs must use HTTPS" unless urls.all? { |url| url.start_with?("https://") }
+          abort "Release URLs must point to TenetxAI/homebrew-tap" unless urls.all? { |url| url.include?("github.com/TenetxAI/homebrew-tap/releases/") }
