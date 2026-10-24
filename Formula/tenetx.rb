@@ -5,22 +5,22 @@
 class Tenetx < Formula
   desc "Secure your AI coding agents — the TenetX CLI"
   homepage "https://tenetx.ai"
-  version "0.4.20"
+  version "0.4.22"
 
   depends_on "python3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/TenetxAI/homebrew-tap/releases/download/v0.4.20/tenetx_darwin_amd64.tar.gz"
-      sha256 "1223584c1b00951e1a473208bed39fe2519123a502e90d65b7538ec1786242a9"
+      url "https://github.com/TenetxAI/homebrew-tap/releases/download/v0.4.22/tenetx_darwin_amd64.tar.gz"
+      sha256 "833712c49cb50459ea25a9d25d00956d535a9c1551512e6bb3f6e3db407ea483"
 
       define_method(:install) do
         bin.install "tenetx"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/TenetxAI/homebrew-tap/releases/download/v0.4.20/tenetx_darwin_arm64.tar.gz"
-      sha256 "a379b379c8e0824cc9d929f1c0da80e4abe3d2be6c69d367fb1651c39da25573"
+      url "https://github.com/TenetxAI/homebrew-tap/releases/download/v0.4.22/tenetx_darwin_arm64.tar.gz"
+      sha256 "5473b4c2c5b5a8aabe9116b1849019201cac15af4da7b94c69e23ec3d843d092"
 
       define_method(:install) do
         bin.install "tenetx"
@@ -30,15 +30,15 @@ class Tenetx < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TenetxAI/homebrew-tap/releases/download/v0.4.20/tenetx_linux_amd64.tar.gz"
-      sha256 "22f69d374e257bd55c9e9c71af2e5216dde74f552707e578bbffbc32d3cdf4bc"
+      url "https://github.com/TenetxAI/homebrew-tap/releases/download/v0.4.22/tenetx_linux_amd64.tar.gz"
+      sha256 "7d3edbd85a1ab468e561f64014bff5bb1190f930d6f4c6f65ebcc84ab36a57e0"
       define_method(:install) do
         bin.install "tenetx"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TenetxAI/homebrew-tap/releases/download/v0.4.20/tenetx_linux_arm64.tar.gz"
-      sha256 "ce6eedbffa144d3a6f70e967305480fe9bd7a59cd0c93bd91b4f903cbc5d6c6f"
+      url "https://github.com/TenetxAI/homebrew-tap/releases/download/v0.4.22/tenetx_linux_arm64.tar.gz"
+      sha256 "ee14ac02625fca1df715743e88396e8b03468b3247018b94c49f9743eb65f17a"
       define_method(:install) do
         bin.install "tenetx"
       end
